@@ -1,0 +1,49 @@
+<%- layout("layouts/boilerplate.ejs") %>
+
+<div class="row">
+<div class="col-8 mt-3 offset-2">
+    <h3>Create a new listing</h3>
+    <form action="/listings" class="needs-validation" method="post" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" placeholder="enter title" id="title" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="des" class="form-label">Description</label>
+            <textarea name="listing[description]" id="des" placeholder="enter description" class="form-control" required></textarea>
+        </div>
+        
+         <div class="mb-3">
+            <label for="img" class="form-label">uploading listing file</label>
+            <input type="file" placeholder="enter image url" name="listing[image]" id="img" class="form-control" required>
+         </div>
+        
+        <div class="row">
+         
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="listing[price]" id="price" placeholder="enter price" class="form-control" required>
+        </div>
+        
+         <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" placeholder="enter country name" id="country" class="form-control" required>
+            <div class="invalid-feedback">enter country name</div>
+         </div>
+        
+        </div>
+
+         <div class="mb-3">
+            <label for="loca" class="form-label">Location</label>
+            <input type="text" name="listing[location]" placeholder="enter location" id="loca" class="form-control" required>
+         </div>
+       
+        <br><br>
+            <button class="btn btn-dark add-btn">Add Listing</button>
+        <br><br>
+
+    </form>
+</div>
+</div>

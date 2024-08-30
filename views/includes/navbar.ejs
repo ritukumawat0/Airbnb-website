@@ -1,0 +1,24 @@
+<nav class="navbar bg-body-light sticky-top navbar-expand-md border-bottom">
+   <div class="container-fluid">
+      <a href="/listings" class="navbar-brand"><i class="fa-solid fa-compass"></i></a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav" >
+            <a href="/listings" class="nav-link">Explore</a>
+            <a href="/listings/new" class="nav-link">Airbnb your home</a>
+        </div>
+        <div class="navbar-nav ms-auto" >
+          <%if(!currUser){%>
+            <a href="/signup" class="nav-link"><b>signup</b></a>
+            <a href="/login" class="nav-link"><b>login</b></a>
+          <%}%>
+           <%if(currUser){%>
+            <a href="/logout" class="nav-link"><b>logout</b></a>
+          <%}%>
+
+      </div>
+      </div>
+   </div>
+</nav>

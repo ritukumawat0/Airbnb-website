@@ -1,0 +1,52 @@
+<%- layout("layouts/boilerplate.ejs") %>
+   
+    <div class="row">
+        <div class="col-8 mt-3 offset-2">
+            <h3 class="edit-heading">Edit your listing</h3>
+    <form action="/listings/<%=listing._id%>?_method=put" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" id="title" class="form-control"  value="<%=listing.title%>" required>
+            <div class="vaid-feedback">Looks good!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="des" class="form-label">Description</label>
+            <textarea name="listing[description]" id="des"  class="form-control"  required><%=listing.description%></textarea>
+        </div>
+
+        <div class="mb-3">
+            original listing image <br>
+            <img src="<%=originalImageUrl%>" alt="" style="width:13rem; height: 8rem;">
+        </div>
+
+        <div class="mb-3">
+            <label for="img" class="form-label">upload new Image</label>
+            <input type="file" name="listing[image]" id="img" class="form-control">
+         </div>
+
+         <div class="row">
+         
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="listing[price]" id="price" value="<%=listing.price%>"  class="form-control" required>
+            </div>
+            
+             <div class="mb-3 col-md-8">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" name="listing[country]"  id="country" value="<%=listing.country%>" class="form-control" required>
+             </div>
+            
+            </div>
+
+            <div class="mb-3">
+                <label for="loca" class="form-label">Location</label>
+                <input type="text" name="listing[location]" value="<%=listing.location%>" id="loca" class="form-control" required>
+             </div>
+
+        <br><br>
+        <button class="btn btn-dark add-btn">Add Listing</button>
+        <br><br>
+</div>
+</div>
